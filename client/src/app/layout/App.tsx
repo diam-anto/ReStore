@@ -1,5 +1,8 @@
+import { Container, CssBaseline } from "@mui/material";
 import { useEffect, useState } from "react";
+import Catalog from "../../features/catalog/Catalog";
 import { Product } from "../models/product";
+import Header from "./Header";
 
 // const products = [
 //   {name: 'product1', price: 100.00},
@@ -31,15 +34,14 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <h1>Re-Store</h1>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>{product.name} - {product.price}</li>
-        ))}
-      </ul>
-      <button onClick={addProduct}>Add a product</button>
-    </div>
+    <>
+    <CssBaseline></CssBaseline>
+      <Header />
+      <Container>
+       <Catalog products={products} addProduct={addProduct}/>     
+      </Container>
+       
+    </>
   );
 }
 
