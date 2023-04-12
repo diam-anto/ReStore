@@ -9,7 +9,7 @@ namespace API.Controllers
     [ApiController]
     [Route("api/[controller]")]
 
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController
     {
         // that we want to do in order to use depedency injection, we create a private field inside this class
         // and assign that private fields to the context that we 're adding in our constructor (ctor) here.
