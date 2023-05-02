@@ -9,8 +9,9 @@ namespace API.Entities
     {
         public int Id { get; set; }
 
-        public int BuyerId { get; set; }
+        public string BuyerId { get; set; }
 
+        // we should shape the data , that we return here (DTo)
         public List<BasketItem> Items { get; set; } = new(); // we initialize prevents if list is undefined new List<BasketItem>(); 
 
         public void AddItem(Product product, int quantity)
