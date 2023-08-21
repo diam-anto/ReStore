@@ -1,4 +1,5 @@
 // the type of action
+// action types
 export const INCREMENT_COUNTER = "INCREMENT_COUNTER";
 export const DECREMENT_COUNTER = "DECREMENT_COUNTER";
  
@@ -9,9 +10,12 @@ export interface CounterState {
 
 const initialState: CounterState = {
     data: 42,
-    title: 'YARC (yet another reduc counter)'
+    title: 'YARC (yet another redux counter)'
 }
 
+// these action creators simply return an object 
+// and specify the type
+// action creators
 export function increment(amount = 1) {
     return {
         type: INCREMENT_COUNTER,

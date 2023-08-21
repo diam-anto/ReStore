@@ -10,23 +10,23 @@ import '@fontsource/roboto/700.css';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './app/router/Routes';
 import { StoreProvider } from './app/context/StoreContext';
-import { configureStore } from './app/store/configureStore';
 import { Provider } from 'react-redux';
-
-const store = configureStore();
-
+import { store } from './app/store/configureStore';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
+  // strict mode for dev mode
   <React.StrictMode>
-    <StoreProvider>
+    {/* comment out storeProvider to see if we have any states with react context instead of redux */}
+    {/* <StoreProvider> */}
       <Provider store={store}>
             <RouterProvider router={router} />
       </Provider>
 
-    </StoreProvider>
+    {/* </StoreProvider> */}
   </React.StrictMode>
 );
 
